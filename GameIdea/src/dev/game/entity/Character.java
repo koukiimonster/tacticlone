@@ -1,11 +1,16 @@
 package dev.game.entity;
 
+import dev.game.item.Equipment;
+
 public class Character extends Entity {
 
 	private Stats stats;
+	private Equipment equipment;
+	
 	
 	public Character() {
 		stats = new Stats();
+		equipment = new Equipment();
 	}
 	
 	public Character(String name) {
@@ -47,6 +52,14 @@ public class Character extends Entity {
 		return this.stats.speed;
 	}
 	
+	public Equipment getEquipment() {
+		return equipment;
+	}
+
+	public void setEquipment(Equipment equipment) {
+		this.equipment = equipment;
+	}
+
 	public String toString() {
 		String info = name
 				+ "\nMax HP: " + stats.hp

@@ -15,7 +15,8 @@ public class Stats {
 	int currentMp;			// current mp
 	int movement;			// determines range of movement
 	int height;				// determines jump height
-	
+	int level;
+	int exp;
 	
 	public Stats() {
 		
@@ -128,6 +129,22 @@ public class Stats {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
 	}
 	
 }

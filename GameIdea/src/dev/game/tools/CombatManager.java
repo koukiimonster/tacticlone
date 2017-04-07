@@ -7,6 +7,9 @@ import dev.game.entity.Entity;
 public class CombatManager {
 
 	ArrayList<Entity> entities;
+	private int expGain;
+	private int moneyGain;
+	private int itemGain;
 	
 	public CombatManager() {
 		entities = new ArrayList<Entity>();
@@ -18,6 +21,10 @@ public class CombatManager {
 	
 	
 	public void resolveAction(Entity source, Entity... target) {
+		
+	}
+	
+	public void rewardExp() {
 		
 	}
 }

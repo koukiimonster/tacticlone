@@ -6,7 +6,6 @@ public class Dialogue {
 
 	// Holds the actual dialogue being spoken
 	private String dialogue;
-	
 	// name of the character saying the dialogue
 	private String speaker;
 	
