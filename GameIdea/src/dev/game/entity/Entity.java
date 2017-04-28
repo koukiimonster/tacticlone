@@ -14,6 +14,10 @@ public abstract class Entity {
 		
 	}
 	
+	public Entity(int id) {
+		
+	}
+	
 	public Entity(String name) {
 		this.name = name;
 	}

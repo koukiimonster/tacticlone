@@ -11,13 +11,15 @@ import dev.game.state.IntroState;
 public class Game {
 	
 	GameState state;
+	private InputManager inputManager;
 	private boolean running;
 	
 	/**
 	 * 
 	 */
 	public Game() {
-		
+		//this.init();
+		this.run();
 	}
 	
 	public void run() {
@@ -38,6 +40,7 @@ public class Game {
 	 */
 	public void init() {
 		state = new IntroState();
+		inputManager = new InputManager();
 	}
 	
 	/**

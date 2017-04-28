@@ -2,8 +2,11 @@ package dev.game.driver;
 
 import dev.game.entity.Character;
 import dev.game.entity.Stats;
+import dev.game.gui.MenuGUI;
 public class TestDriver {
 	public static void main(String[] args) {
+		
+		MenuGUI gui = new MenuGUI();
 		
 		Character char_1 = new Character("Bob");
 		Stats stats = new Stats();

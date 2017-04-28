@@ -2,23 +2,22 @@ package dev.game.entity;
 
 import dev.game.item.Equipment;
 
-public class Character extends Entity {
+public class BattleEntity extends Entity {
 
+	//Character c;
 	private Stats stats;
 	private Equipment equipment;
 	
-	
-	public Character() {
+	public BattleEntity() {
 		stats = new Stats();
 		equipment = new Equipment();
 	}
 	
-	public Character(String name) {
+	public BattleEntity(String name) {
 		super(name);
 		stats = new Stats();
 		equipment = new Equipment();
 	}
-
 	
 	public Stats getStats() {
 		return stats;
