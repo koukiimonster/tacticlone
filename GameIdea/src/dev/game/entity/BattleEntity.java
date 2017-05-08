@@ -1,22 +1,36 @@
 package dev.game.entity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import dev.game.item.Equipment;
 
+// General entity used in combat
 public class BattleEntity extends Entity {
 
-	//Character c;
+	private Character c;
 	private Stats stats;
-	private Equipment equipment;
+	private ArrayList<Equipment> equipment;
+	private List<Buff> activeBuffs;
+	private List<Debuff> activeDebuffs;
+	private HashMap<String, Ability> activeAbilities;
 	
 	public BattleEntity() {
 		stats = new Stats();
-		equipment = new Equipment();
+		equipment = new ArrayList<Equipment>();
+		activeBuffs = new ArrayList<Buff>();
+		activeDebuffs = new ArrayList<Debuff>();
+		
 	}
 	
-	public BattleEntity(String name) {
-		super(name);
-		stats = new Stats();
-		equipment = new Equipment();
+	public BattleEntity(Character c) {
+		this.c = c;
+		stats = c.getStats();
+		equipment = c.getEquipment();
+		activeBuffs = new ArrayList<Buff>();
+		activeDebuffs = new ArrayList<Debuff>();
+		activeAbilities = c.getAbilities();
 	}
 	
 	public Stats getStats() {
@@ -52,12 +66,38 @@ public class BattleEntity extends Entity {
 		return this.stats.speed;
 	}
 	
-	public Equipment getEquipment() {
+	public ArrayList<Equipment> getEquipment() {
 		return equipment;
 	}
 
-	public void setEquipment(Equipment equipment) {
+	public void setEquipment(ArrayList<Equipment> equipment) {
 		this.equipment = equipment;
+	}
+
+	public List<Buff> getActiveBuffs() {
+		return activeBuffs;
+	}
+
+	public void setActiveBuffs(List<Buff> activeBuffs) {
+		this.activeBuffs = activeBuffs;
+	}
+
+	public List<Debuff> getActiveDebuffs() {
+		return activeDebuffs;
+	}
+
+	public void setActiveDebuffs(List<Debuff> activeDebuffs) {
+		this.activeDebuffs = activeDebuffs;
+	}
+
+	
+	
+	public HashMap<String, Ability> getActiveAbilities() {
+		return activeAbilities;
+	}
+
+	public void setActiveAbilities(HashMap<String, Ability> activeAbilities) {
+		this.activeAbilities = activeAbilities;
 	}
 
 	public String toString() {

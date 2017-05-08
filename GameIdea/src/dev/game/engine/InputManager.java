@@ -6,6 +6,7 @@ public class InputManager {
 
 	KeyboardInput keyboard;
 	
+	
 	public InputManager() {
 		keyboard = new KeyboardInput();
 	}
@@ -20,6 +21,9 @@ public class InputManager {
 	
 	
 	public void selectOption(KeyEvent e) {
-		
+		int key = e.getKeyCode();
+		if (key == KeyEvent.VK_F || key == KeyEvent.VK_ENTER ) {
+			
+		}
 	}
 }

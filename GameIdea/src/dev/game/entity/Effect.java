@@ -1,5 +1,5 @@
 package dev.game.entity;
 
-public class Effect {
+public interface Effect {
 
 }

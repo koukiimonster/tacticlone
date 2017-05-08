@@ -1,4 +1,7 @@
 package dev.game.state;
+
+import java.util.Stack;
+
 /**Manages the state the game is in. States the game can be in are Combat, World Map, Point of Interest, Cutscene...
  * 
  * @author Sok
@@ -6,11 +9,24 @@ package dev.game.state;
  */
 public class StateManager {
 
-	GameState state;
+	Stack<State> stateStack;
+	State currentState;
 	
 	public StateManager() {
+		this.init();
+	}
+	
+	public void init() {
+		stateStack = new Stack<State>();
+		currentState = new IntroState();
 		
+		stateStack.push(currentState);
 	}
 	
 	
+	// Switch between states...pop the state we are moving into onto the stack
+	public void transition(State state) {
+		
+		
+	}
 }

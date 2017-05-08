@@ -1,22 +1,27 @@
 package dev.game.entity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import dev.game.item.Equipment;
 
 public class Character extends Entity {
 
 	private Stats stats;
-	private Equipment equipment;
-	
+	private ArrayList<Equipment> equipment;
+	private HashMap<String, Ability> abilities;
 	
 	public Character() {
 		stats = new Stats();
-		equipment = new Equipment();
+		equipment = new ArrayList<Equipment>();
+		abilities = new HashMap<String, Ability>();
 	}
 	
 	public Character(String name) {
 		super(name);
 		stats = new Stats();
-		equipment = new Equipment();
+		equipment = new ArrayList<Equipment>();
 	}
 
 	
@@ -53,14 +58,27 @@ public class Character extends Entity {
 		return this.stats.speed;
 	}
 	
-	public Equipment getEquipment() {
+	public ArrayList<Equipment> getEquipment() {
 		return equipment;
 	}
 
-	public void setEquipment(Equipment equipment) {
+	public void setEquipment(ArrayList<Equipment> equipment) {
 		this.equipment = equipment;
 	}
 
+	public void setAbilities(HashMap<String, Ability> abilities) {
+		this.abilities = abilities;
+	}
+	
+	public HashMap<String, Ability> getAbilities() {
+		return this.abilities;
+	}
+	
+	public Ability getAbility(String name) {
+		Ability a = abilities.get(name);
+		return a;
+	}
+	
 	public String toString() {
 		String info = name
 				+ "\nMax HP: " + stats.hp
@@ -79,4 +97,6 @@ public class Character extends Entity {
 		
 		return info;
 	}
+	
+	
 }

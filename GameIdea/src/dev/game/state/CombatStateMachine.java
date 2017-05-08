@@ -6,6 +6,7 @@ package dev.game.state;
  */
 public class CombatStateMachine {
 
+	
 	public void transition() {
 		
 	}

@@ -1,16 +1,20 @@
 package dev.game.engine;
 
-import dev.game.state.GameState;
+import java.util.Stack;
+
 import dev.game.state.IntroState;
+import dev.game.state.State;
 
 /** Main game class. The start of the entire game.
  * 
- * @author Sok
+ * @author TSok
  *
  */
 public class Game {
 	
-	GameState state;
+	//StateManager stateManager;
+	State currentState;
+	Stack<State> stateStack;
 	private InputManager inputManager;
 	private boolean running;
 	
@@ -39,22 +43,29 @@ public class Game {
 	 * 
 	 */
 	public void init() {
-		state = new IntroState();
+		stateStack = new Stack<State>();
+		//stateManager = new StateManager();
+		currentState = new IntroState();
 		inputManager = new InputManager();
+		stateStack.push(currentState);
+		
+		// Sets the initial state to the intro
+		//stateManager.init();
+		//currentState
 	}
 	
 	/**
 	 * 
 	 */
 	private void update() {
-		
+		currentState.update();
 	}
 	
 	/**
 	 * 
 	 */
 	private void draw() {
-		
+		currentState.draw();
 		
 	}
 	
@@ -62,6 +73,6 @@ public class Game {
 	 * 
 	 */
 	private void processInput() {
-		
+		currentState.processInput();
 	}
 }

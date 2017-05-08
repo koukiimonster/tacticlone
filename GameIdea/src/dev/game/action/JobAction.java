@@ -1,13 +1,13 @@
 package dev.game.action;
 
-import dev.game.entity.Entity;
+import dev.game.entity.BattleEntity;
 
 public class JobAction implements Action {
 
-	Entity s;
-	Entity[] targets;
+	BattleEntity s;
+	BattleEntity[] targets;
 	
-	public JobAction(Entity s, Entity... target) {
+	public JobAction(BattleEntity s, BattleEntity... target) {
 		this.s = s;
 		this.targets = target;
 	}
