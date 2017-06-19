@@ -12,15 +12,14 @@ public class BattleEntity extends Entity {
 	private Character c;
 	private Stats stats;
 	private ArrayList<Equipment> equipment;
-	private List<Buff> activeBuffs;
-	private List<Debuff> activeDebuffs;
+	private List<Effect> activeEffects;
+
 	private HashMap<String, Ability> activeAbilities;
 	
 	public BattleEntity() {
 		stats = new Stats();
 		equipment = new ArrayList<Equipment>();
-		activeBuffs = new ArrayList<Buff>();
-		activeDebuffs = new ArrayList<Debuff>();
+		activeEffects = new ArrayList<Effect>();
 		
 	}
 	
@@ -28,8 +27,7 @@ public class BattleEntity extends Entity {
 		this.c = c;
 		stats = c.getStats();
 		equipment = c.getEquipment();
-		activeBuffs = new ArrayList<Buff>();
-		activeDebuffs = new ArrayList<Debuff>();
+		activeEffects = new ArrayList<Effect>();
 		activeAbilities = c.getAbilities();
 	}
 	
@@ -74,23 +72,19 @@ public class BattleEntity extends Entity {
 		this.equipment = equipment;
 	}
 
-	public List<Buff> getActiveBuffs() {
-		return activeBuffs;
+	public List<Effect> getActiveEffects() {
+		return activeEffects;
 	}
 
-	public void setActiveBuffs(List<Buff> activeBuffs) {
-		this.activeBuffs = activeBuffs;
+	public void setActiveEffects(List<Effect> activeEffects) {
+		this.activeEffects = activeEffects;
 	}
 
-	public List<Debuff> getActiveDebuffs() {
-		return activeDebuffs;
-	}
 
-	public void setActiveDebuffs(List<Debuff> activeDebuffs) {
-		this.activeDebuffs = activeDebuffs;
-	}
 
-	
+	public void addActiveEffect(Effect effect) {
+		activeEffects.add(effect);
+	}
 	
 	public HashMap<String, Ability> getActiveAbilities() {
 		return activeAbilities;

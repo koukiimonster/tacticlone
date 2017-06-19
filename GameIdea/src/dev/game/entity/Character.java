@@ -65,7 +65,7 @@ public class Character extends Entity {
 	public void setEquipment(ArrayList<Equipment> equipment) {
 		this.equipment = equipment;
 	}
-
+	
 	public void setAbilities(HashMap<String, Ability> abilities) {
 		this.abilities = abilities;
 	}

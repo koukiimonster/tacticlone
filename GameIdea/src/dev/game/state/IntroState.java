@@ -1,14 +1,16 @@
 package dev.game.state;
 
-import java.awt.event.KeyEvent;
+
+import java.util.List;
 
 import dev.game.menu.MainMenu;
 import dev.game.menu.Menu;
 
-public class IntroState implements State {
+public class IntroState extends State {
 
 	private String title;
 	private Menu menu;
+	//private List<InputListenerComponent> inputListeners;
 	
 	public IntroState() {
 		title = "RPG TITLE HERE!";
@@ -30,7 +32,8 @@ public class IntroState implements State {
 	@Override
 	public void processInput() {
 		// TODO Auto-generated method stub
-		
+			
 	}
+		
 	
 }

@@ -15,8 +15,9 @@ public class Stats {
 	int currentMp;			// current mp
 	int movement;			// determines range of movement
 	int height;				// determines jump height
-	int level;
-	int exp;
+	int level;				//
+	int exp;				// number of experience points accumulated
+	int ap;					// number of ability points they can allocate to equip abilities
 	
 	public Stats() {
 		
@@ -145,6 +146,14 @@ public class Stats {
 
 	public void setExp(int exp) {
 		this.exp = exp;
+	}
+
+	public int getAp() {
+		return ap;
+	}
+
+	public void setAp(int ap) {
+		this.ap = ap;
 	}
 	
 }

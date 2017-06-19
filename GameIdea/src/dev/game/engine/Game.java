@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import dev.game.state.IntroState;
 import dev.game.state.State;
+import dev.game.state.StateManager;
 
 /** Main game class. The start of the entire game.
  * 
@@ -12,9 +13,7 @@ import dev.game.state.State;
  */
 public class Game {
 	
-	//StateManager stateManager;
-	State currentState;
-	Stack<State> stateStack;
+	StateManager stateManager;
 	private InputManager inputManager;
 	private boolean running;
 	
@@ -43,29 +42,24 @@ public class Game {
 	 * 
 	 */
 	public void init() {
-		stateStack = new Stack<State>();
-		//stateManager = new StateManager();
-		currentState = new IntroState();
-		inputManager = new InputManager();
-		stateStack.push(currentState);
+		stateManager = new StateManager();
+		stateManager.init();
 		
-		// Sets the initial state to the intro
-		//stateManager.init();
-		//currentState
+		
 	}
 	
 	/**
 	 * 
 	 */
 	private void update() {
-		currentState.update();
+		stateManager.update();
 	}
 	
 	/**
 	 * 
 	 */
 	private void draw() {
-		currentState.draw();
+		stateManager.draw();
 		
 	}
 	
@@ -73,6 +67,6 @@ public class Game {
 	 * 
 	 */
 	private void processInput() {
-		currentState.processInput();
+		stateManager.processInput();
 	}
 }

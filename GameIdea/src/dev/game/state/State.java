@@ -1,9 +1,23 @@
 package dev.game.state;
 
-public interface State {
+public abstract class State implements IState {
 
-	
-	public void update();
-	public void draw();
-	public void processInput();
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void processInput() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

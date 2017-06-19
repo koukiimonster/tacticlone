@@ -8,7 +8,7 @@ public class Ability {
 	private int type;
 	private int cost;
 	
-	private Effect effect;
+	private Effect effect;		// not all abilities will have an effect
 	
 	public Ability() {
 		

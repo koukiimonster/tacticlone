@@ -26,7 +26,22 @@ public class StateManager {
 	
 	// Switch between states...pop the state we are moving into onto the stack
 	public void transition(State state) {
-		
-		
+		currentState = state;
+		stateStack.push(currentState);
+	}
+	
+	public void update() {
+		stateStack.peek().update();
+		currentState.update();
+	}
+	
+	public void draw() {
+		stateStack.peek().update();
+		currentState.draw();
+	}
+	
+	public void processInput() {
+		stateStack.peek().update();
+		currentState.processInput();
 	}
 }

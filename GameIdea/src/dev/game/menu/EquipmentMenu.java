@@ -10,7 +10,7 @@ import dev.game.item.Item;
  * @author TSok
  *
  */
-public class EquipmentMenu {
+public class EquipmentMenu implements Menu {
 
 	private Inventory playerInventory;
 	
@@ -38,6 +38,25 @@ public class EquipmentMenu {
 			
 		}
 	}
+
+	@Override
+	public void select() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cancel() {
+		// TODO Auto-generated method stub
+		
+	}
 	
+
+	public void update() {
+		
+	}
 	
+	public void draw() {
+		
+	}
 }

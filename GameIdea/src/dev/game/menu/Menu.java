@@ -1,10 +1,11 @@
 package dev.game.menu;
 
-public abstract class Menu {
+public interface Menu {
 	
 	
-	public void select() {
-
-	}
+	
+	public void select();
+	
+	public void cancel();
 	
 }

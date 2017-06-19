@@ -1,26 +1,65 @@
 package dev.game.jobclass;
 
+import java.util.ArrayList;
+
+import dev.game.entity.*;
 /** Job classes contain the stat bonuses and other information that are unique to each class.
  * 
  * @author Sok
  *
  */
-public class JobClass {
+public abstract class JobClass {
 
-	int strengthMod;
-	int hpMod;
-	int vigorMod;
-	int defenseMod;
-	int intelligenceMod;
-	int speedMod;
-	int agilityMod;
-	int mpMod;
+	int rank;
+	boolean isSpecialized;
+	ArrayList<Ability> abilities;
+	
+	
+	double strengthMod;
+	double hpMod;
+	double vigorMod;
+	double defenseMod;
+	double intelligenceMod;
+	double speedMod;
+	double agilityMod;
+	double mpMod;
+	
+	boolean canEquipSmallShield = false;
+	boolean canEquipMediumShield = false;
+	boolean canEquipGreatShield = false;
+	boolean canEquip = false;
+	boolean canEquipOneHandSword = false;
+	boolean canEquipTwoHandSword = false;
+	boolean canEquipSpear = false;
+	boolean canEquipLance = false;
+	boolean canEquipOneHandAxe = false;
+	boolean canEquipTwoHandAxe = false;
+	boolean canEquipBow = false;
+	boolean canEquipCrossbow = false;
+	boolean canEquipStaff = false;
+	boolean canEquipGreatstaff = false;
+	boolean canEquipTalisman = false;
+	boolean canEquipClothArmor = false;
+	boolean canEquipLightArmor = false;
+	boolean canEquipMediumArmor = false;
+	boolean canEquipHeavyArmor = false;
+	boolean canEquipHelmet = true;
+	boolean canEquipChest = true;
+    boolean canEquipArms = true;
+	boolean canEquipLegs = true;
+	
+	
 	
 	public JobClass() {
 		
 	}
 
-	public int getStrengthMod() {
+	// Initializes the job class information by id
+	public JobClass(int id) {
+		
+	}
+	
+	public double getStrengthMod() {
 		return strengthMod;
 	}
 
@@ -28,7 +67,7 @@ public class JobClass {
 		this.strengthMod = strengthMod;
 	}
 
-	public int getHpMod() {
+	public double getHpMod() {
 		return hpMod;
 	}
 
@@ -36,7 +75,7 @@ public class JobClass {
 		this.hpMod = hpMod;
 	}
 
-	public int getVigorMod() {
+	public double getVigorMod() {
 		return vigorMod;
 	}
 
@@ -44,7 +83,7 @@ public class JobClass {
 		this.vigorMod = vigorMod;
 	}
 
-	public int getDefenseMod() {
+	public double getDefenseMod() {
 		return defenseMod;
 	}
 
@@ -52,7 +91,7 @@ public class JobClass {
 		this.defenseMod = defenseMod;
 	}
 
-	public int getIntelligenceMod() {
+	public double getIntelligenceMod() {
 		return intelligenceMod;
 	}
 
@@ -60,7 +99,7 @@ public class JobClass {
 		this.intelligenceMod = intelligenceMod;
 	}
 
-	public int getSpeedMod() {
+	public double getSpeedMod() {
 		return speedMod;
 	}
 
@@ -68,7 +107,7 @@ public class JobClass {
 		this.speedMod = speedMod;
 	}
 
-	public int getAgilityMod() {
+	public double getAgilityMod() {
 		return agilityMod;
 	}
 
@@ -76,7 +115,7 @@ public class JobClass {
 		this.agilityMod = agilityMod;
 	}
 
-	public int getMpMod() {
+	public double getMpMod() {
 		return mpMod;
 	}
 
@@ -84,6 +123,23 @@ public class JobClass {
 		this.mpMod = mpMod;
 	}
 	
+	public void rankUp() {
+		// handle normal rank up
+		if(rank < 8) {
+			rank++;
+		}
+		
+		// handle specialize rank up
+		if(rank > 8 && rank < 11 && isSpecialized) {
+			rank++;
+		}
+	}
 	
+	public void specialize() {
+		if (rank == 8) {
+			rank++;
+			isSpecialized = true;
+		}
+	}
 	
 }
